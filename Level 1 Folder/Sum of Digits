@@ -1,0 +1,11 @@
+number = input("gimme your number ")
+lenght = len(number)
+list = []
+x=0
+while x < lenght:
+    list.append(number[x])
+    x+=1
+sum=0
+for x in list:
+    sum +=int(x)
+print(sum)
