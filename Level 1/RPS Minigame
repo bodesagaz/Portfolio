@@ -1,0 +1,65 @@
+from random import randint
+rock = '''
+    _______
+---'   ____)
+      (_____)
+      (_____)
+      (____)
+---.__(___)
+'''
+
+paper = '''
+    _______
+---'   ____)____
+          ______)
+          _______)
+         _______)
+---.__________)
+'''
+
+scissors = '''
+    _______
+---'   ____)____
+          ______)
+       __________)
+      (____)
+---.__(___)
+'''
+
+choice = input("Welcome to the RPS minigame! Please choose between Rock, Paper or Scissors. ").lower()
+if choice == "rock":
+    player = rock
+elif choice == "paper":
+    player = paper
+elif choice == "scissors":
+    player = scissors
+else:
+    print("You should chose between rock, paper or scissors ONLY. :D")
+    invalid = 1
+
+generate = randint(0,2)
+if generate == 0:
+    computer = rock
+elif generate == 1:
+    computer = paper
+else:
+    computer = scissors
+
+if player == computer:
+    print("You chose:")
+    print(player)
+    print("Computer chose:")
+    print(computer)
+    print("It's a draw.")
+if (player == rock and computer == scissors) or (player == paper and computer == rock) or (player == scissors and computer == paper):
+    print("You chose:")
+    print(player)
+    print("Computer chose:")
+    print(computer)
+    print("You've won! :D")
+else:
+    print("You chose:")
+    print(player)
+    print("Computer chose:")
+    print(computer)
+    print("You've lost! :C")
