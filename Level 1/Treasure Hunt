@@ -1,0 +1,54 @@
+print('''
+  ___________________________________________________________________
+ / \-----     ---------  -----------     -------------- ------    ---|
+ \_/_________________________________________________________________|
+ |~ ~~ ~~~ ~ ~ ~~~ ~ _____.----------._ ~~~  ~~~~ ~~   ~~  ~~~~~ ~~~~|
+ |  _   ~~ ~~ __,---'_       "         `. ~~~ _,--.  ~~~~ __,---.  ~~|
+ | | \___ ~~ /      ( )   "          "   `-.,' (') \~~ ~ (  / _\ \~~ |
+ |  \    \__/_   __(( _)_      (    "   "     (_\_) \___~ `-.___,'  ~|
+ |~~ \     (  )_(__)_|( ))  "   ))          "   |    "  \ ~~ ~~~ _ ~~|
+ |  ~ \__ (( _( (  ))  ) _)    ((      \//    " |   "    \_____,' | ~|
+ |~~ ~   \  ( ))(_)(_)_)|  "    ))    //\  " __,---._  "  "   "  /~~~|
+ |    ~~~ |(_ _)| | |   |   "  (   "      ,-'~~~ ~~~ `-.   ___  /~ ~ |
+ | ~~     |  |  |   |   _,--- ,--. _  "  (~~  ~~~~  ~~~ ) /___\ \~~ ~|
+ |  ~ ~~ /   |      _,----._,'`--'\.`-._  `._~~_~__~_,-'  |H__|  \ ~~|
+ |~~    / "     _,-' / `\ ,' / _'  \`.---.._          __        " \~ |
+ | ~~~ / /   .-' , / ' _,'_  -  _ '- _`._ `.`-._    _/- `--.   " " \~|
+ |  ~ / / _-- `---,~.-' __   --  _,---.  `-._   _,-'- / ` \ \_   " |~|
+ | ~ | | -- _    /~/  `-_- _  _,' '  \ \_`-._,-'  / --   \  - \_   / |
+ |~~ | \ -      /~~| "     ,-'_ /-  `_ ._`._`-...._____...._,--'  /~~|
+ | ~~\  \_ /   /~~/    ___  `---  ---  - - ' ,--.     ___        |~ ~|
+ |~   \      ,'~~|  " (o o)   "         " " |~~~ \_,-' ~ `.     ,'~~ |
+ | ~~ ~|__,-'~~~~~\     "/      "  "   "    /~ ~~   O ~ ~~`-.__/~ ~~~|
+ |~~~ ~~~  ~~~~~~~~`.______________________/ ~~~    |   ~~~ ~~ ~ ~~~~|
+ |____~jrei~__~_______~~_~____~~_____~~___~_~~___~\_|_/ ~_____~___~__|
+ / \----- ----- ------------  ------- ----- -------  --------  ------|
+ \_/_________________________________________________________________|
+''')
+print("Welcome to Remote Sticks.")
+print("Your mission is to find the treasure.") 
+first_choice = input("\nDo you want to go to the forest or to the village? ").lower()
+if first_choice == "forest":
+    second_choice = input("\nIt's very dark here, you can't see well. \nWhat are you going to do? You can hide in the cave or you can go near the river. ").lower()
+    if second_choice == "cave":
+        print("You found a large bear in that cave! Now you are in its stomach. \nGame Over. ")
+    elif second_choice == "river":
+        print("A snake caught you on the way there. You run back to the village while screaming for help. \nGame Over. ")
+    else:
+        print("\nYou can't go there :( Try again.")
+elif first_choice == "village":
+    second_choice = input("\nThe village's folk are sleeping, its late at night! \nYou can either sneak in or circumvent the village. ").lower()
+    if second_choice == "sneak" or second_choice == "sneak in":
+        print("The village militia caught you! And they are quite suspicious about why you're sneaking around. You're captured and won't go back to your adventure anytime soon. \nGame Over.")
+    elif second_choice == "circumvent":
+        third_choice = input("\nNow you can search for the treasure near the woods or near the mountain. Where do you want to go? ").lower()
+        if third_choice == "woods" or third_choice == "near the woods":
+            print("\nYou've found the treasure!!! \nCongratulations!!!")
+        elif third_choice == "mountain" or third_choice == "near the mountain":
+            print("Bandits have found you! You don't know what they'll do with you, but you know that it won't be anything good. \nGame Over.")
+        else:
+            print("\nYou can't go thre :( Try again.")
+    else:
+        print("\nYou can't go there :( Try again.")
+else:
+    print("\nYou can't go there :( try again. ")
