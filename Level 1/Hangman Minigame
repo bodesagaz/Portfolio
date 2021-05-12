@@ -1,0 +1,51 @@
+from random import randint
+
+word_list = ["behavior", "tropical", "spaghetti","antagonist","liability","soldier","pentagon","rupture","monkey","address","employer"]
+lives = 5
+# Choosing a word
+word = randint(0, len(word_list)-1)
+word = word_list[word]
+answer = ""
+# making up the "_ _ _ _ _"
+for n in word:
+    answer+= "_ "
+
+# Turning str into list to assign
+def intolist(list):
+    list2 = []
+    for n in list:
+        list2 += n
+    list = list2
+    return list
+
+answer = intolist(answer)
+word = intolist(word)
+# making the guess
+
+print("You're playing hangman!")
+answer2 = " ".join(answer)
+while lives > 0:
+    guess = input(f"You have {lives} lives. Chose a letter. \n{answer2}\n\n").lower()
+    x = 0
+    correct = 0
+# correct changes if matches, x is for locating the matches
+    for L in word:
+        if guess == L:
+            correct = 1
+            y = int(2*x)
+            answer[y] = word[x]
+        x +=1
+    answer2 = " ".join(answer)
+    if correct == 0:
+        print("You lost 1 life!\n")
+        lives -= 1
+    counting = 0
+    for n in answer:
+        if n == "_":
+            counting += 1
+    if counting == 0:
+        print("You've won the game!\n", "".join(answer))
+        break
+    elif lives == 0:
+        print("You lost the game!")
+        break
